@@ -24,7 +24,7 @@ const Header = () => {
                 </div>
                 <ul className='md:flex hidden'>
                     <li>
-                        <Link className='font-normal text-base leading-6 text-[#000000] mx-3' to=''>Home</Link>
+                        <Link className='font-normal text-base leading-6 text-[#000000] mx-3 ' to=''>Home</Link>
                         <Link className='mx-3 font-normal text-base leading-6 text-[#000000]' to=''>Contact</Link>
                         <Link className='mx-3 font-normal text-baseleading-6 text-[#000000]' to=''>About</Link>
                         <Link className='mx-3 font-normal text-base leading-6 text-[#000000]' to=''>Sign Up</Link>

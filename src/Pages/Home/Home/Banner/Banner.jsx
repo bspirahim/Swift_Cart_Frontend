@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -10,21 +10,49 @@ import { Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
 const Banner = () => {
+    const category = [
+        {
+            name: 'Woman’s Fashion',
+        },
+        {
+            name: 'Men’s Fashion',
+        },
+        {
+            name: 'Electronics',
+        },
+        {
+            name: 'Home & Lifestyle',
+        },
+        {
+            name: 'Medicine',
+        },
+        {
+            name: 'Sports & Outdoor',
+        },
+        {
+            name: 'Baby’s & Toys',
+        },
+        {
+            name: 'Groceries & Pets',
+        },
+        {
+            name: 'Health & Beauty',
+        },
+        
+
+    ]
     return (
         <div className='max-w-screen-lg mx-auto '>
-            <div className='grid grid-cols-4'>
-                <div className=" border-r mt-5">
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Woman's Fashion </a></li> </Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Men's Fashion </a></li> </Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Electronics </a></li> </Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Medicine </a></li> </Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Sports & Outdoor </a></li> </Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Baby's & Toys</a></li></Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Groceries & Pets</a></li> </Link>
-                <Link><li className='list-none font-normal text-base leading-6'><a href="">Health & Beauty</a></li> </Link>   
+            <div className='md:grid md:grid-cols-5'>
+                <div className=" border-r">
+                    <div className='md:mt-3 md:block flex gap-4 overflow-x-scroll no-scrollbar px-3 py-3 bg-[#E07575] md:bg-white duration-500'>
+                    {
+                        category?.map(item =><Link><li className='list-none  text-nowrap font-normal text-base leading-6 text-[#000000] py-2 px-1 hover:bg-[#A0BCE0] rounded'><a href="">{item.name}</a></li> </Link> )
+                    }
+                    </div>
                 
                 </div>
-                <div className="row-span-3 col-span-3">
+                <div className="md:row-span-4 md:col-span-4">
                     <div className=''>
                         <Swiper
                             spaceBetween={30}
@@ -35,14 +63,14 @@ const Banner = () => {
                             className="mySwiper"
                         >
                             <SwiperSlide>
-                                <div className="grid md:grid-cols-2 mt-5 ms-5 bg-[rgb(0,0,0)] w-full h-80">
-                                    <div className='text-[#FAFAFA] m-auto'>
-                                        <div className='flex items-center space-x-2'>
-                                            <img className='w-10 h-12' src="/images/banner/apple.png" alt="" />
-                                            <p className='font-normal text-base leading-6'>iPhone 14 Series</p>
+                                <div className="grid md:grid-cols-2 md:mt-7 md:ms-7 bg-[rgb(0,0,0)] w-full md:h-80">
+                                    <div className='text-[#FAFAFA] m-auto md:py-0 py-7 text-center md:text-start'>
+                                        <div className='flex items-center justify-center md:justify-start space-x-2 '>
+                                            <img className='md:w-10 md:h-12 w-5 h-6' src="/images/banner/apple.png" alt="" />
+                                            <p className='font-normal text-base leading-6 '>iPhone 14 Series</p>
                                         </div>
                                         <h1 className='tracking-normal leading-normal font-semibold text-5xl'>Up to 10% <br /> off Voucher</h1>
-                                        <div className='flex items-center space-x-2'>
+                                        <div className='flex items-center space-x-2 justify-center md:justify-start'>
                                             <p className='font-medium text-sm leading-6 border-b'>Shop Now</p>
                                             <img className='w-4 h-3.5' src="/images/banner/right-arrow.png" alt="" />
                                         </div>
@@ -53,14 +81,14 @@ const Banner = () => {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="grid md:grid-cols-2 mt-5 ms-5 bg-[rgb(0,0,0)] w-full h-80">
-                                    <div className='text-[#FAFAFA] m-auto'>
-                                        <div className='flex items-center space-x-2'>
-                                            <img className='w-10 h-12' src="/images/banner/apple.png" alt="" />
-                                            <p className='font-base text-sm leading-6'>iPhone 14 Series</p>
+                                <div className="grid md:grid-cols-2 md:mt-7 md:ms-7 bg-[rgb(0,0,0)] w-full md:h-80">
+                                    <div className='text-[#FAFAFA] m-auto md:py-0 py-7 text-center md:text-start'>
+                                        <div className='flex items-center justify-center md:justify-start space-x-2 '>
+                                            <img className='md:w-10 md:h-12 w-5 h-6' src="/images/banner/apple.png" alt="" />
+                                            <p className='font-normal text-base leading-6 '>iPhone 14 Series</p>
                                         </div>
                                         <h1 className='tracking-normal leading-normal font-semibold text-5xl'>Up to 10% <br /> off Voucher</h1>
-                                        <div className='flex items-center space-x-2'>
+                                        <div className='flex items-center space-x-2 justify-center md:justify-start'>
                                             <p className='font-medium text-sm leading-6 border-b'>Shop Now</p>
                                             <img className='w-4 h-3.5' src="/images/banner/right-arrow.png" alt="" />
                                         </div>
@@ -71,14 +99,14 @@ const Banner = () => {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="grid md:grid-cols-2 mt-5 ms-5 bg-[rgb(0,0,0)] w-full h-80">
-                                    <div className='text-[#FAFAFA] m-auto'>
-                                        <div className='flex items-center space-x-2'>
-                                            <img className='w-10 h-12' src="/images/banner/apple.png" alt="" />
-                                            <p className='font-base text-sm leading-6'>iPhone 14 Series</p>
+                                <div className="grid md:grid-cols-2 md:mt-7 md:ms-7 bg-[rgb(0,0,0)] w-full md:h-80">
+                                    <div className='text-[#FAFAFA] m-auto md:py-0 py-7 text-center md:text-start'>
+                                        <div className='flex items-center justify-center md:justify-start space-x-2 '>
+                                            <img className='md:w-10 md:h-12 w-5 h-6' src="/images/banner/apple.png" alt="" />
+                                            <p className='font-normal text-base leading-6 '>iPhone 14 Series</p>
                                         </div>
                                         <h1 className='tracking-normal leading-normal font-semibold text-5xl'>Up to 10% <br /> off Voucher</h1>
-                                        <div className='flex items-center space-x-2'>
+                                        <div className='flex items-center space-x-2 justify-center md:justify-start'>
                                             <p className='font-medium text-sm leading-6 border-b'>Shop Now</p>
                                             <img className='w-4 h-3.5' src="/images/banner/right-arrow.png" alt="" />
                                         </div>
